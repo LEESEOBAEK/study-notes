@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>손목·손관절 - 상지 운동손상 정리</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      background: #f0f4f8;
+      color: #2d3748;
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a365d, #2b6cb0);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 { font-size: 1.8rem; margin-bottom: 8px; }
+    header p { font-size: 0.95rem; opacity: 0.85; }
+
+    nav {
+      background: #2b6cb0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      background: rgba(255,255,255,0.15);
+      transition: background 0.2s;
+    }
+    nav a:hover { background: rgba(255,255,255,0.3); }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 16px 60px;
+    }
+
+    section {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 30px;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: #1a365d;
+      border-left: 5px solid #2b6cb0;
+      padding-left: 14px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      color: #2b6cb0;
+      margin: 20px 0 10px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    h4 {
+      font-size: 0.95rem;
+      color: #4a5568;
+      margin: 14px 0 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 0.9rem;
+    }
+    thead tr { background: #2b6cb0; color: white; }
+    th, td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    tbody tr:nth-child(even) { background: #f7fafc; }
+    tbody tr:hover { background: #ebf4ff; }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.78rem;
+      font-weight: bold;
+      margin: 2px;
+    }
+    .badge-blue { background: #bee3f8; color: #1a365d; }
+    .badge-red { background: #fed7d7; color: #742a2a; }
+    .badge-green { background: #c6f6d5; color: #1c4532; }
+    .badge-yellow { background: #fefcbf; color: #744210; }
+    .badge-purple { background: #e9d8fd; color: #44337a; }
+
+    .alert {
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin: 12px 0;
+      font-size: 0.9rem;
+    }
+    .alert-blue { background: #ebf8ff; border-left: 4px solid #3182ce; color: #1a365d; }
+    .alert-red { background: #fff5f5; border-left: 4px solid #e53e3e; color: #742a2a; }
+    .alert-yellow { background: #fffff0; border-left: 4px solid #d69e2e; color: #744210; }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px;
+      margin: 12px 0;
+    }
+    .card {
+      background: #f7fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .card h4 { color: #2b6cb0; margin-top: 0; border: none; }
+    .card p, .card li { font-size: 0.88rem; color: #4a5568; }
+    .card ul { padding-left: 16px; }
+
+    .nerve-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 12px 0;
+    }
+    .nerve-card {
+      border-radius: 10px;
+      padding: 18px;
+      text-align: center;
+    }
+    .nerve-median { background: #ebf8ff; border: 2px solid #3182ce; }
+    .nerve-ulnar { background: #fff5f5; border: 2px solid #e53e3e; }
+    .nerve-radial { background: #f0fff4; border: 2px solid #38a169; }
+    .nerve-card h4 { margin-bottom: 8px; font-size: 0.95rem; }
+    .nerve-card .deformity {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 8px 0;
+    }
+    .nerve-card p { font-size: 0.82rem; color: #4a5568; }
+
+    .summary-table { margin-top: 8px; }
+    .summary-table td:first-child {
+      font-weight: bold;
+      color: #2b6cb0;
+      white-space: nowrap;
+    }
+
+    ul, ol { padding-left: 20px; }
+    li { margin: 4px 0; font-size: 0.92rem; }
+
+    p { font-size: 0.92rem; margin: 6px 0; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.8rem;
+      color: #a0aec0;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.4rem; }
+      section { padding: 20px 16px; }
+      .nerve-grid { grid-template-columns: 1fr; }
+      table { font-size: 0.82rem; }
+      th, td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>손목관절 &amp; 손관절</h1>
+  <p>상지 운동손상과 실무실습 | 해부학·손상·평가·재활 완전 정리</p>
+</header>
+
+<nav>
+  <a href="#wrist-anatomy">손목 구조</a>
+  <a href="#wrist-kinematics">관절 운동</a>
+  <a href="#ligaments">인대</a>
+  <a href="#wrist-injury">손목 손상</a>
+  <a href="#hand-anatomy">손관절 구조</a>
+  <a href="#hand-deformity">손 변형</a>
+  <a href="#nerve">신경</a>
+  <a href="#assessment">평가</a>
+  <a href="#rehab">재활</a>
+  <a href="#summary">핵심 요약</a>
+</nav>
+
+<main>
+
+  <!-- 1. 손목관절 구조 -->
+  <section id="wrist-anatomy">
+    <h2>1. 손목관절 구조 (Radiocarpal Joint)</h2>
+
+    <h3>관절 형태 및 구성</h3>
+    <table>
+      <thead><tr><th>항목</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td>관절 형태</td><td>타원관절 (Ellipsoidal Joint)</td></tr>
+        <tr><td>근위 구성</td><td>요골(Radius) 원위부 + 척골 관절원판(Articular Disc)</td></tr>
+        <tr><td>원위 구성</td><td>근위 수근골 열 — 주상골, 월상골, 삼각골</td></tr>
+      </tbody>
+    </table>
+
+    <h3>수근골 8개 (Carpal Bones)</h3>
+    <div class="card-grid">
+      <div class="card">
+        <h4>근위열 (Proximal Row)</h4>
+        <ul>
+          <li><strong>주상골 (Scaphoid)</strong> — 가장 많이 골절</li>
+          <li><strong>월상골 (Lunate)</strong> — 가장 많이 탈구</li>
+          <li>삼각골 (Triquetrum)</li>
+          <li>두상골 (Pisiform) — 기능성 종자골</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>원위열 (Distal Row)</h4>
+        <ul>
+          <li>대능형골 (Trapezium)</li>
+          <li>소능형골 (Trapezoid)</li>
+          <li><strong>유두골 (Capitate)</strong> — 가장 큰 수근골</li>
+          <li>유구골 (Hamate) — 갈고리 돌기 보유</li>
+        </ul>
+      </div>
+    </div>
+    <div class="alert alert-blue">
+      <strong>암기법:</strong> "So Long To Pinky, The Carpals Here"<br>
+      Scaphoid – Lunate – Triquetrum – Pisiform / Trapezium – Trapezoid – Capitate – Hamate
+    </div>
+  </section>
+
+  <!-- 2. 관절 운동 -->
+  <section id="wrist-kinematics">
+    <h2>2. 손목관절 운동 (Kinematics)</h2>
+
+    <table>
+      <thead><tr><th>운동 방향</th><th>정상 ROM</th></tr></thead>
+      <tbody>
+        <tr><td>굴곡 (Flexion)</td><td>0° ~ 80°</td></tr>
+        <tr><td>신전 (Extension)</td><td>0° ~ 70°</td></tr>
+        <tr><td>요측 편위 (Radial Deviation)</td><td>0° ~ 20°</td></tr>
+        <tr><td>척측 편위 (Ulnar Deviation)</td><td>0° ~ 30°</td></tr>
+      </tbody>
+    </table>
+
+    <h3>수근골 운동 메커니즘</h3>
+    <div class="card-grid">
+      <div class="card">
+        <h4>굴곡 시</h4>
+        <p>근위열 수근골 → 배측(dorsal)으로 회전</p>
+      </div>
+      <div class="card">
+        <h4>신전 시</h4>
+        <p>근위열 수근골 → 장측(palmar)으로 회전</p>
+      </div>
+      <div class="card">
+        <h4>요측 편위 시</h4>
+        <p>주상골 굴곡 → 근위열 굴곡<br><span class="badge badge-red">DISI 패턴</span></p>
+      </div>
+      <div class="card">
+        <h4>척측 편위 시</h4>
+        <p>주상골 신전 → 근위열 신전<br><span class="badge badge-blue">VISI 패턴</span></p>
+      </div>
+    </div>
+
+    <h3>주요 근육</h3>
+    <table>
+      <thead><tr><th>근육</th><th>동작</th><th>신경 지배</th></tr></thead>
+      <tbody>
+        <tr><td>요측수근굴근 (FCR)</td><td>굴곡 + 요측편위</td><td>정중신경 C6, C7</td></tr>
+        <tr><td>척측수근굴근 (FCU)</td><td>굴곡 + 척측편위</td><td>척골신경 C7, C8</td></tr>
+        <tr><td>장장근 (Palmaris Longus)</td><td>굴곡</td><td>정중신경 C7, C8</td></tr>
+        <tr><td>요측수근신근 장/단 (ECRL/ECRB)</td><td>신전 + 요측편위</td><td>요골신경 C6, C7</td></tr>
+        <tr><td>척측수근신근 (ECU)</td><td>신전 + 척측편위</td><td>요골신경 후골간신경 C7, C8</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 3. 인대 -->
+  <section id="ligaments">
+    <h2>3. 손목 인대 (Ligaments)</h2>
+
+    <h3>외인성 인대 (Extrinsic)</h3>
+    <table>
+      <thead><tr><th>인대</th><th>위치</th><th>기능</th></tr></thead>
+      <tbody>
+        <tr><td>요수근 장측 인대</td><td>장측</td><td>굴곡 제한, 안정성</td></tr>
+        <tr><td>척수근 장측 인대</td><td>장측</td><td>안정성</td></tr>
+        <tr><td>요수근 배측 인대</td><td>배측</td><td>신전 제한</td></tr>
+      </tbody>
+    </table>
+
+    <h3>내인성 인대 (Intrinsic) — 임상 핵심</h3>
+    <div class="card-grid">
+      <div class="card">
+        <h4>주상월상 인대 (Scapholunate Lig.)</h4>
+        <p>손상 시 → <span class="badge badge-red">DISI 변형</span></p>
+        <p>Watson Test 양성</p>
+      </div>
+      <div class="card">
+        <h4>월상삼각 인대 (Lunotriquetral Lig.)</h4>
+        <p>손상 시 → <span class="badge badge-blue">VISI 변형</span></p>
+      </div>
+    </div>
+
+    <h3>삼각섬유연골복합체 (TFCC)</h3>
+    <div class="alert alert-yellow">
+      <strong>구성:</strong> 관절원판 + 척측 측부 인대 + 배측/장측 요척 인대 + 척측 수근 신근건 건초<br>
+      <strong>기능:</strong> 요척관절(DRUJ) 안정화, 척측 수근 하중 전달 (약 20%)<br>
+      <strong>손상 기전:</strong> 넘어질 때 손 짚기, 전완 비틀림
+    </div>
+  </section>
+
+  <!-- 4. 손목 주요 손상 -->
+  <section id="wrist-injury">
+    <h2>4. 손목 주요 손상</h2>
+
+    <h3>① 주상골 골절 (Scaphoid Fracture)</h3>
+    <table class="summary-table">
+      <tbody>
+        <tr><td>발생 기전</td><td>FOOSH (넘어지면서 손 짚기)</td></tr>
+        <tr><td>핵심 징후</td><td><strong>해부학적 비연(Anatomical Snuffbox) 압통</strong></td></tr>
+        <tr><td>위험성</td><td>혈액 공급 원위→근위 방향 → 근위부 골절 시 <span class="badge badge-red">무혈성 괴사(AVN)</span></td></tr>
+        <tr><td>진단</td><td>초기 X-ray 놓침 多 → MRI 또는 CT 필요</td></tr>
+        <tr><td>치료</td><td>비전위성: 석고 고정 / 전위성: 수술</td></tr>
+      </tbody>
+    </table>
+
+    <h3>② 월상골 탈구 (Lunate Dislocation)</h3>
+    <table class="summary-table">
+      <tbody>
+        <tr><td>발생 기전</td><td>강한 손목 과신전 + 척측 편위</td></tr>
+        <tr><td>증상</td><td>손목 장측 돌출, 정중신경 압박 → 손가락 저린감</td></tr>
+        <tr><td>분류</td><td>Mayfield Stage I~IV (I: 주상월상 파열 → IV: 월상골 완전 탈구)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>③ TFCC 손상</h3>
+    <table class="summary-table">
+      <tbody>
+        <tr><td>증상</td><td>척측 손목 통증, 파악력 약화, 전완 회전 시 통증</td></tr>
+        <tr><td>특수 검사</td><td>Piano Key Sign, 척측 스트레스 검사</td></tr>
+        <tr><td>분류</td><td>Palmer Type I (외상성) / Type II (퇴행성)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>④ 드퀘르뱅 건초염 (De Quervain's Tenosynovitis)</h3>
+    <table class="summary-table">
+      <tbody>
+        <tr><td>이환 건</td><td>장무지외전근(APL) + 단무지신근(EPB) — 제1구획</td></tr>
+        <tr><td>증상</td><td>요측 손목·엄지 측 통증 및 압통</td></tr>
+        <tr><td>특수 검사</td><td><strong>Finkelstein Test</strong> — 엄지 주먹 + 척측 편위 시 요측 통증</td></tr>
+        <tr><td>치료</td><td>스플린트, 스테로이드 주사, 필요 시 수술적 감압</td></tr>
+      </tbody>
+    </table>
+
+    <h3>⑤ 수근관 증후군 (CTS)</h3>
+    <table class="summary-table">
+      <tbody>
+        <tr><td>원인</td><td>횡수근 인대 아래 정중신경 압박</td></tr>
+        <tr><td>증상</td><td>엄지~3번째 손가락 저린감, 야간 악화, 무지구근 위축</td></tr>
+        <tr><td>특수 검사</td><td><strong>Phalen's Test</strong> (손목 최대 굴곡 60초), <strong>Tinel's Sign</strong> (수근관 타진)</td></tr>
+        <tr><td>치료</td><td>야간 스플린트, 스테로이드 주사, 수술적 감압</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 5. 손관절 구조 -->
+  <section id="hand-anatomy">
+    <h2>5. 손관절 구조 (Hand Joints)</h2>
+
+    <table>
+      <thead><tr><th>관절명</th><th>약어</th><th>형태</th><th>주요 운동</th></tr></thead>
+      <tbody>
+        <tr><td>손목손허리관절</td><td>CMC</td><td>안장관절(엄지) / 평면관절(2~5)</td><td>대립(엄지)</td></tr>
+        <tr><td>손허리손가락관절</td><td>MCP</td><td>타원관절</td><td>굴곡·신전·외전·내전</td></tr>
+        <tr><td>근위지절간관절</td><td>PIP</td><td>경첩관절</td><td>굴곡 0~110°</td></tr>
+        <tr><td>원위지절간관절</td><td>DIP</td><td>경첩관절</td><td>굴곡 0~90°</td></tr>
+      </tbody>
+    </table>
+
+    <h3>MCP 관절 측부 인대 — 임상 핵심</h3>
+    <div class="alert alert-blue">
+      <strong>굴곡 시 팽팽(Taut)</strong> → 부목 고정은 반드시 <strong>굴곡 위치</strong>에서<br>
+      <strong>신전 시 이완(Lax)</strong> → 신전 고정 시 유착·변형 위험
+    </div>
+
+    <h3>엄지 CMC 관절 (안장관절)</h3>
+    <ul>
+      <li>가장 자유도가 높은 CMC 관절</li>
+      <li>대립(Opposition) = 굴곡 + 외전 + 내회전</li>
+      <li>핵심 인대: 전방 사관인대(Beak Ligament) → 손상 시 Bennett 골절</li>
+    </ul>
+  </section>
+
+  <!-- 6. 손 변형 -->
+  <section id="hand-deformity">
+    <h2>6. 손 주요 변형 및 손상</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>추지 변형 (Mallet Finger)</h4>
+        <ul>
+          <li>원인: DIP 신건 파열 or 말절골 골절</li>
+          <li>기전: DIP 굴곡 강제</li>
+          <li>변형: <strong>DIP 굴곡 고정</strong></li>
+          <li>치료: DIP 신전 스플린트 6~8주</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>부토니에르 변형 (Boutonniere)</h4>
+        <ul>
+          <li>원인: PIP 중심건(Central Slip) 파열</li>
+          <li>변형: <strong>PIP 굴곡 + DIP 과신전</strong></li>
+          <li>기전: 측속이 장측 이동</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>백조목 변형 (Swan-neck)</h4>
+        <ul>
+          <li>원인: 내재근 단축, 류마티스, 장측판 손상</li>
+          <li>변형: <strong>PIP 과신전 + DIP 굴곡</strong></li>
+          <li>부토니에르의 반대 패턴</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>베네트 골절 (Bennett's Fx)</h4>
+        <ul>
+          <li>위치: 제1 중수골 기저부 관절 내</li>
+          <li>기전: 엄지 축 방향 압박</li>
+          <li>특징: 장무지외전근이 큰 편을 당김</li>
+          <li>치료: K-wire 고정</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>롤란도 골절 (Rolando's Fx)</h4>
+        <ul>
+          <li>제1 중수골 기저부 <strong>분쇄 골절</strong></li>
+          <li>T자/Y자형 골절선</li>
+          <li>베네트보다 예후 나쁨</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>스키어 엄지 (Skier's Thumb)</h4>
+        <ul>
+          <li>MCP 척측 측부 인대 파열</li>
+          <li>기전: 엄지 강제 외전</li>
+          <li>검사: 척측 스트레스 검사</li>
+          <li>치료: 스플린트 or 수술</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 신경 -->
+  <section id="nerve">
+    <h2>7. 손의 신경 지배 (Nerve Innervation)</h2>
+
+    <div class="nerve-grid">
+      <div class="nerve-card nerve-median">
+        <h4>정중신경<br>(Median N.)</h4>
+        <div class="deformity">원숭이 손<br>(Ape Hand)</div>
+        <p>엄지~3번째 반 장측<br>무지구근 지배<br>C6~T1</p>
+      </div>
+      <div class="nerve-card nerve-ulnar">
+        <h4>척골신경<br>(Ulnar N.)</h4>
+        <div class="deformity">갈퀴 손<br>(Claw Hand)</div>
+        <p>4~5번째 손가락<br>소지구근·골간근<br>C8~T1</p>
+      </div>
+      <div class="nerve-card nerve-radial">
+        <h4>요골신경<br>(Radial N.)</h4>
+        <div class="deformity">수하수<br>(Wrist Drop)</div>
+        <p>손 배측 요측<br>신전근 지배<br>C5~C8</p>
+      </div>
+    </div>
+
+    <h3>정중신경 손상 레벨별 증상</h3>
+    <table>
+      <thead><tr><th>손상 레벨</th><th>증상</th></tr></thead>
+      <tbody>
+        <tr><td>팔꿈치 위</td><td>전완 회내 약화 + 손목/손가락 굴곡 약화 + 감각 이상</td></tr>
+        <tr><td>손목 수준</td><td>무지구근 약화 → 엄지 대립 불가 (원숭이 손)</td></tr>
+        <tr><td>수근관 내</td><td>엄지~3번째 저린감, 야간 악화 (CTS)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 8. 평가 -->
+  <section id="assessment">
+    <h2>8. 임상 평가 (Clinical Assessment)</h2>
+
+    <h3>압통 위치 → 감별 진단</h3>
+    <table>
+      <thead><tr><th>압통 위치</th><th>의심 손상</th></tr></thead>
+      <tbody>
+        <tr><td>해부학적 비연 (Anatomical Snuffbox)</td><td>주상골 골절</td></tr>
+        <tr><td>척측 손목 (TFCC 부위)</td><td>TFCC 손상</td></tr>
+        <tr><td>요측 손목 1구획</td><td>드퀘르뱅 건초염</td></tr>
+        <tr><td>수근관 중앙</td><td>수근관 증후군</td></tr>
+        <tr><td>제1 중수골 기저부</td><td>Bennett/Rolando 골절</td></tr>
+      </tbody>
+    </table>
+
+    <h3>특수 검사 (Special Tests)</h3>
+    <table>
+      <thead><tr><th>검사명</th><th>방법</th><th>양성 반응</th><th>의심 진단</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Finkelstein Test</strong></td><td>엄지 주먹 쥐고 척측 편위</td><td>요측 통증</td><td>드퀘르뱅</td></tr>
+        <tr><td><strong>Phalen's Test</strong></td><td>손목 최대 굴곡 60초 유지</td><td>손가락 저린감·통증</td><td>CTS</td></tr>
+        <tr><td><strong>Tinel's Sign</strong></td><td>수근관 타진</td><td>손가락 방사통</td><td>CTS</td></tr>
+        <tr><td><strong>Piano Key Sign</strong></td><td>척골 두부 하방 압박</td><td>스프링 느낌·통증</td><td>TFCC/DRUJ 불안정</td></tr>
+        <tr><td><strong>Watson Test</strong></td><td>주상골 압박 후 요측 편위</td><td>클릭·통증</td><td>주상월상 불안정</td></tr>
+        <tr><td><strong>Valgus/Varus Stress</strong></td><td>MCP/PIP 측방 스트레스</td><td>느슨함·통증</td><td>측부 인대 손상</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 9. 재활 -->
+  <section id="rehab">
+    <h2>9. 재활 원칙 (Rehabilitation)</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>급성기 (0~3일)</h4>
+        <ul>
+          <li>PRICE 원칙</li>
+          <li>부종 조절</li>
+          <li>통증 완화</li>
+          <li>적절한 고정</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>아급성기 (3일~3주)</h4>
+        <ul>
+          <li>ROM 운동 시작</li>
+          <li>부드러운 근력 운동</li>
+          <li>부종 관리 지속</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>재활기 (3주~)</h4>
+        <ul>
+          <li>점진적 저항 운동</li>
+          <li>고유감각 훈련</li>
+          <li>기능적 운동 패턴</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>복귀기</h4>
+        <ul>
+          <li>스포츠 특이적 훈련</li>
+          <li>테이핑/보호대</li>
+          <li>재손상 예방 교육</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>테이핑 및 보호 원칙</h3>
+    <table>
+      <thead><tr><th>손상</th><th>고정 방법</th></tr></thead>
+      <tbody>
+        <tr><td>주상골 골절 의심</td><td>즉시 고정 후 이송</td></tr>
+        <tr><td>MCP 측부 인대 손상</td><td>Buddy Taping (인접 손가락)</td></tr>
+        <tr><td>추지 변형</td><td>DIP 신전 스플린트</td></tr>
+        <tr><td>드퀘르뱅</td><td>엄지 포함 손목 스플린트</td></tr>
+        <tr><td>CTS</td><td>손목 중립 야간 스플린트</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 10. 핵심 요약 -->
+  <section id="summary">
+    <h2>10. 핵심 요약 (Quick Reference)</h2>
+
+    <table>
+      <thead><tr><th>질문</th><th>답</th></tr></thead>
+      <tbody>
+        <tr><td>가장 많이 골절되는 수근골</td><td><span class="badge badge-red">주상골 (Scaphoid)</span></td></tr>
+        <tr><td>가장 많이 탈구되는 수근골</td><td><span class="badge badge-red">월상골 (Lunate)</span></td></tr>
+        <tr><td>FOOSH 손상</td><td>주상골 골절, 월상골 탈구, 콜레스 골절</td></tr>
+        <tr><td>해부학적 비연 압통</td><td>주상골 골절 의심</td></tr>
+        <tr><td>TFCC 손상 위치</td><td>척측 손목 통증</td></tr>
+        <tr><td>추지 변형 고정 위치</td><td>DIP 신전 위치</td></tr>
+        <tr><td>부토니에르 변형</td><td>PIP 굴곡 + DIP 과신전</td></tr>
+        <tr><td>백조목 변형</td><td>PIP 과신전 + DIP 굴곡</td></tr>
+        <tr><td>갈퀴 손</td><td>척골신경 손상</td></tr>
+        <tr><td>원숭이 손</td><td>정중신경 손상 (무지구근 위축)</td></tr>
+        <tr><td>수하수</td><td>요골신경 손상</td></tr>
+        <tr><td>MCP 고정 원칙</td><td>굴곡 위치 (측부 인대 팽팽)</td></tr>
+        <tr><td>CTS 특수 검사</td><td>Phalen's Test + Tinel's Sign</td></tr>
+        <tr><td>드퀘르뱅 특수 검사</td><td>Finkelstein Test</td></tr>
+        <tr><td>주상월상 불안정 검사</td><td>Watson Test</td></tr>
+      </tbody>
+    </table>
+
+    <div class="alert alert-red" style="margin-top:20px;">
+      <strong>시험 최빈출 3가지</strong><br>
+      1. 주상골 골절 — 해부학적 비연 압통 + AVN 위험<br>
+      2. 부토니에르 vs 백조목 변형 — 방향 구별<br>
+      3. 신경 3대 변형 — 정중(원숭이), 척골(갈퀴), 요골(수하수)
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  상지 운동손상과 실무실습 | 참고: 대한정형외과학회, Magee's Orthopedic Physical Assessment
+</footer>
+
+</body>
+</html>
